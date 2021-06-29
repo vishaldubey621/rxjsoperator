@@ -1,0 +1,16 @@
+<h1>CombineLatest Work </h1>
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Select Bowler</label>
+    <select class="form-control" id="exampleFormControlSelect1" (change)="onChangebowler($event)">
+      <option *ngFor="let item of bowler" [value]="item">{{item}}</option>
+    </select>
+    <label for="exampleFormControlSelect2">Select wicket</label>
+    <select class="form-control" id="exampleFormControlSelect2" (change)="onChangewicket($event)">
+      <option *ngFor="let item of wicket" [value]="item">{{item}}</option>
+    </select>
+  </div>
+  
+  <h2>Result</h2>
+  <ng-container *ngFor="let item of selectedData">
+    <p> wicket taken by <b>{{item.bowler}} </b>and number of wicket <b>{{item.wicket}}</b></p>
+  </ng-container>
